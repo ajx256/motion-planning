@@ -11,7 +11,7 @@ using namespace std;
 char** world;
 int worldCols;
 int worldRows;
-bool gradVehicle = false;
+bool kinoVehicle = false;
 
 bool collision(Vertex* start, Vertex* end)
 {
@@ -127,12 +127,12 @@ Edge* kinoCollision(Vertex* start, pair<double,double> target, vector<pair<doubl
 
 int main(int argc, char* argv[])
 {
-	// Check if using the grad vehicle
+	// Check if using the kinodynamic vehicle
 	if (argc == 2)
 	{
 		string flag = argv[1];
-		if (flag == "-grad")
-			gradVehicle = true;
+		if (flag == "-kino")
+			kinoVehicle = true;
 	}
 
 	// starting info for start state
@@ -177,7 +177,7 @@ int main(int argc, char* argv[])
 	RRT motionPlanner;
 	Edge* solution;
 	
-	if (gradVehicle)
+	if (kinoVehicle)
 	{
 		solution = motionPlanner.kinoSearch(start, goal, kinoCollisionCheck, worldCols, worldRows);
 		
