@@ -1,2 +1,2 @@
-g++ -std=c++11 gridWorld.cpp -o run.sh
-chmod a+x run.sh
+g++ -std=c++11 gridWorld.cpp -o motionPlanner
+chmod a+x motionPlanner
