@@ -87,6 +87,7 @@ try:
     
     ax.add_collection(mplot3d.art3d.Line3DCollection(treeLines, color='k', lw=1))
     ax.add_collection(mplot3d.art3d.Line3DCollection(trajectoryLines, color='r', lw=3))
+    ax.scatter3D(solutionPoints[0], solutionPoints[1], solutionPoints[2], color='r')
 
     plt.show()
 except:
